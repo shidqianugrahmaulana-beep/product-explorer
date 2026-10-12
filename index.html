@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Explorer API</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🛍️ Product Explorer</h1>
+      <p class="subtitle">Jelajahi berbagai produk pilihan dengan mudah</p>
+    </header>
+
+    <!-- Controls Section: Search, Filter, Sort, Reset -->
+    <section class="controls-card">
+      <div class="control-group">
+        <label for="search-input">🔍 Cari Produk</label>
+        <input type="text" id="search-input" placeholder="Ketik nama produk..." />
+      </div>
+
+      <div class="control-group">
+        <label for="category-filter">🏷️ Kategori</label>
+        <select id="category-filter">
+          <option value="">Semua Kategori</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="sort-select">↕️ Urutkan</label>
+        <select id="sort-select">
+          <option value="default">Default</option>
+          <option value="price-asc">Harga Terendah</option>
+          <option value="price-desc">Harga Tertinggi</option>
+          <option value="rating-desc">Rating Tertinggi</option>
+          <option value="name-asc">Nama A-Z</option>
+        </select>
+      </div>
+
+      <div class="control-group button-group">
+        <label>&nbsp;</label>
+        <button id="reset-btn" class="btn btn-reset">🔄 Reset Filter</button>
+      </div>
+    </section>
+
+    <!-- Product Counter -->
+    <div class="counter-container">
+      <span id="product-counter">Memuat data produk...</span>
+    </div>
+
+    <!-- State Indicator (Loading / Error) -->
+    <div id="state-message" class="state-message hidden"></div> 
+
+    <!-- Product Grid -->
+    <main>
+      <div id="product-grid" class="product-grid"></div>
+    </main>
+  </div>
+
+  <!-- Modal Detail Product -->
+  <div id="product-modal" class="modal hidden">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content">
+      <button id="close-modal-btn" class="close-btn">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>    
+
+  <script src="script.js"></script>
+</body>
+</html>
